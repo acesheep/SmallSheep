@@ -29,11 +29,21 @@ dependencies {
     implementation 'com.cleveroad:slidingtutorial:1.0.8'
     //日志
     implementation 'com.orhanobut:logger:2.2.0'
+    //kenburnsview
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     //butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //PercentRelativeLayout
-    compile 'com.android.support:percent:26.1.0'
-
+    implementation 'com.android.support:percent:26.1.0'
+    //glide
+    implementation ('com.github.bumptech.glide:glide:4.6.1'){
+        exclude group:"com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    //PermissionsDispatcher
+    implementation ("com.github.hotchemi:permissionsdispatcher:3.2.0") {
+        exclude group:"com.android.support"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.2.0"
 }

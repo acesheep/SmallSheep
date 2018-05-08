@@ -1,5 +1,6 @@
 package com.sheep.zk.smallsheep.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -18,6 +19,8 @@ import com.cleveroad.slidingtutorial.TutorialPageOptionsProvider;
 import com.cleveroad.slidingtutorial.TutorialSupportFragment;
 import com.sheep.zk.smallsheep.R;
 import com.sheep.zk.smallsheep.ui.CustomToast;
+import com.sheep.zk.smallsheep.view.impl.SplashActivity;
+import com.sheep.zk.smallsheep.view.impl.WelcomeActivity;
 
 public class CustomTutorialSupportFragment extends TutorialSupportFragment
         implements OnTutorialPageChangeListener {
@@ -109,6 +112,7 @@ public class CustomTutorialSupportFragment extends TutorialSupportFragment
         return R.layout.fragment_custom_tutorial;
     }
 
+
     @Override
     protected TutorialOptions provideTutorialOptions() {
         return newTutorialOptionsBuilder(getContext())
@@ -126,7 +130,9 @@ public class CustomTutorialSupportFragment extends TutorialSupportFragment
                 .setOnSkipClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        CustomToast.makeText(getActivity(),"lala", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent();
+                        intent.setClassName("com.sheep.zk.smallsheep", "com.sheep.zk.smallsheep.view.impl.WelcomeActivity");
+                        startActivity(intent);
                     }
                 })
                 .build();
